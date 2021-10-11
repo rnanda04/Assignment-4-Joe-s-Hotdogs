@@ -1,0 +1,56 @@
+body {
+	background-color: #fbad00;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Ephesis', cursive;
+	font-size: 100px;
+}
+
+img {
+	width: 100px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu {
+	font-family: 'Lato', sans-serif;
+	text-align: center; 
+}
+
+
+h2 {
+	margin-right: 50px;
+	margin-left: 50px; 
+	font-family: 'Lato', sans-serif;
+}
+
+.top {
+	text-align: center; 
+}
+
+.column {
+	text-align: center; 
+	float: left;
+	width: 50%;
+}
+
+.row:after {
+	content: "";
+ 	display: table;
+ 	clear: both;
+}
+
+#output {
+	font-family: 'Lato', sans-serif;
+	margin-top: 20px; 
+	margin-bottom: 20px;
+}
+
+.thankyou h2 {
+	text-align: center;
+	font-family: 'Ephesis', cursive;
+	padding-bottom: 20px;
+}

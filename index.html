@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Joe's Hotdog Stand</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Lato:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+	<h1>Joe's Hotdog Stand</h1>
+	<img src="hotdog.png">
+	<h2 class="top">Menu</h2>
+	<div class="menu">
+		<p>Hotdog: $3.75</p>
+		<p>Fries: $2.00</p>
+		<p>Drink: $1.50</p>
+	</div>
+	<h2 class="top">Order Summary</h2> 
+	<div class="column">
+		<h2>Quantity</h2>
+		<div id="output">
+			<div id="textbox1"></div>
+			<div id="textbox2"></div>
+			<div id="textbox3"></div>
+		</div>
+	</div>
+	<div class="column">
+		<h2>Price</h2>
+		<div id="output">
+			<div id="textbox4"></div>
+			<div id="textbox5"></div>
+			<div id="textbox6"></div>
+			<div id="textbox7"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var hotdog = prompt("How many hotdogs would you like to order?", );
+		var fries = prompt("How many fries would you like to order?", );
+		var drink = prompt("How many drinks would you like to order?", );  
+		
+		
+		var order = hotdog * 3.75 + fries * 2.00 + drink * 1.50; 
+		var new_order = Math.round(order * Math.pow(10,2))/Math.pow(10,2); 
+		
+		if (order >= 20.00) {
+			order = order * 0.9;
+			discount = Math.round(order * Math.pow(10,2))/Math.pow(10,2);
+		} 
+		
+		order = order * 1.0625; 
+		tax = Math.round(order * Math.pow(10,2))/Math.pow(10,2);
+		masstax = Math.round((tax - new_order) * Math.pow(10,2))/Math.pow(10,2);
+
+
+		document.getElementById("textbox1").innerHTML = "Hotdog(s): " + hotdog;
+		document.getElementById("textbox2").innerHTML = "Fries: " + fries;
+		document.getElementById("textbox3").innerHTML = "Drink(s): " + drink;
+
+		document.getElementById("textbox4").innerHTML = "Subtotal: $" + new_order.toFixed(2);
+		if (new_order >= 20) {
+			document.getElementById("textbox5").innerHTML = "Subtotal with discount:  $" + discount.toFixed(2);
+			masstax =  Math.round((tax - discount)*Math.pow(10,2))/Math.pow(10,2);
+		}
+		else {
+			document.getElementById("textbox5").innerHTML = "Sorry, there is no discount available.";
+		}
+		document.getElementById("textbox6").innerHTML = "Tax: $" + masstax.toFixed(2);
+		document.getElementById("textbox7").innerHTML = "Total (Including Tax): $" + tax.toFixed(2);		
+	</script>
+	<div class="thankyou">
+		<h2>Order confirmed! Thank you for dining with us!</h2>
+	</div>
+
+</body>
+</html>
